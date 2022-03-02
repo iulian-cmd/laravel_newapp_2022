@@ -1,22 +1,34 @@
 @extends('template')
 
 @section('title')
-    Articles
+    Catalogue
 @endsection
 
-@section('content_title')
-    Article 
-@endsection
 
-@section('image')
-@for ($i=113; $i < 125; $i++)
+
+{{-- @section('image') --}}
+{{-- @for ($i=113; $i < 125; $i++)
     <img src="https://picsum.photos/id/{{$i}}/500/400?grayscale" class="card-img-top my-5 mx-2" alt="random_photo" style="width: 500px; height: 400px">
-    @endfor
-@endsection
+    @endfor --}}
+{{-- @endsection --}}
+
 
 @section('content')
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quo eius doloremque officiis consequatur dolore beatae, quod cupiditate neque totam pariatur laboriosam. Reiciendis minus incidunt, labore corrupti accusamus quis doloribus.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ipsum nemo suscipit laboriosam ut eveniet optio dolorum magnam quod praesentium numquam delectus pariatur fugiat quibusdam ad, deleniti iste hic consequatur!
 
+    @foreach($products as $product)
+    
+        <div class="card">
+        <h5 class="bg-light card-title">Name: {{$product->name}}</h5>
+        <img src="{{$product->image}}" class="card-img-top rounded m-3 p-2" alt="..." style="object-fit: contain;">
+        <div class="card-body">
+        <p class="bg-light card-text">Description: {{$product->description}}</p>
+        <p class="bg-light">Price: {{$product->price}}</p>
+        <p class="bg-light">Duration of the adventure: {{$product->duration}}</p>
+        <p class="bg-light">For clients aged over 14: {{$product->adult}}</p>
+        <p class="bg-light">Level of difficukty: {{$product->level}}</p>   
+        </div>
+      </div>
+    
+  @endforeach
 
 @endsection

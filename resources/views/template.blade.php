@@ -59,23 +59,15 @@
         
     </div>
 
-    @yield('image')
+    {{-- @yield('image') --}}
     
-    <div class="container-fluid d-flex justify-content-center">
-    <div class="card my-3">
-        <div class="card-body">
-          <h5 class="card-title">@yield('content_title')</h5>
-          <p class="card-text">@yield('content')</p>
-          
-          <p class="card-text text-end"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4">
+          @yield('content') 
         </div>
       </div>
-
-    
-
-
-
+    </div>
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>
