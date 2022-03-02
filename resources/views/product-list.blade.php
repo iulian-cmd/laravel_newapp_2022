@@ -15,6 +15,6 @@
 @endsection
 
 @section('content')
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quibusdam ipsum deserunt voluptates sequi, veritatis quidem eveniet est laborum quo impedit assumenda quaerat odit consequatur, sapiente aliquid doloremque itaque minima? </p>
+   
 
 @endsection
