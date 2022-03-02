@@ -15,6 +15,8 @@
 @endsection
 
 @section('content')
-   
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quo eius doloremque officiis consequatur dolore beatae, quod cupiditate neque totam pariatur laboriosam. Reiciendis minus incidunt, labore corrupti accusamus quis doloribus.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ipsum nemo suscipit laboriosam ut eveniet optio dolorum magnam quod praesentium numquam delectus pariatur fugiat quibusdam ad, deleniti iste hic consequatur!
+
 
 @endsection
