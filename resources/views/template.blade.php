@@ -6,7 +6,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>App Name - @yield('title')</title>
@@ -59,23 +59,22 @@
         
     </div>
 
-    @yield('image')
+    {{-- @yield('image') --}}
     
-    <div class="container-fluid d-flex justify-content-center">
-    <div class="card my-3">
-        <div class="card-body">
-          <h5 class="card-title">@yield('content_title')</h5>
-          <p class="card-text">@yield('content')</p>
-          
-          <p class="card-text text-end"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-        </div>
-      </div>
-
+    {{-- <div class="container-fluid bg-light"> --}}
     
+      <div class="row d-flex justify-content-center p-2 m-3 border border-warning">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
+            @yield('content') 
+          </div>
+        </div>
+      {{-- </div> --}}
 
-
-
+      
+      <footer class="row">
+        @include('footer')
+    </footer>
+      
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>
