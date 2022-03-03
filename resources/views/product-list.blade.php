@@ -16,9 +16,10 @@
 @section('content')
 
 
+{{-- <div class="col-lg-4 col-md-6 col-sm-12 mb-2"> --}}
+<div class="d-flex justify-content-between">
     @foreach($products as $product)
-    
-        <div class="card p-2 m-3 shadow p-3 mb-5 bg-body rounded">
+        <div class="card p-2 m-3 shadow mb-5 bg-body rounded">
             <img src="{{$product->image}}" class="card-img-top shadow p-2 mb-3 bg-body rounded" alt="image_of_product" style="height: 15vw; object-fit: cover;">
             <div class="card-body">
                 <h5 class="bg-light card-title text-center mb-3"><span class="fw-bold text-secondary">Name of the product: </span><span class="text-uppercase fw-lighter text-center">{{$product->name}}</span></h5>
@@ -29,9 +30,11 @@
                 <p class="bg-light card-text"><span class="fw-bold text-center text-secondary">Level of difficulty: </span><span class="fw-lighter">{{$product->level}}</span></p>   
         </div>
         </div>
-          
+        {{-- </div> --}}
+        
         
         @endforeach
+    </div>
 
 
 @endsection
