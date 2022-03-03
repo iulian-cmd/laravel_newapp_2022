@@ -21,3 +21,6 @@ Route::get('home', [HomeController::class, 'showHome']);
 Route::get('product', [ProductController::class, 'showList']);
 Route::get('product/{id}',[ProductController::class, 'showProduct']);
 Route::get('cart', [CartController::class, 'showCart']);
+
+//backoffice
+Route::get('backoffice', [HomeController::class, 'index']);
