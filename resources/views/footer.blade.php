@@ -9,7 +9,7 @@
 
             <!-- Grid column -->
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-weight-bold ">Boutique à VTT </h6>
+                <h6 class="text-uppercase mb-4 font-weight-bold ">Adventure  </h6>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Ultrices vitae auctor eu augue ut lectus. Volutpat consequat mauris nunc
                     congue. </p>
@@ -22,10 +22,9 @@
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                 <h6 class="text-uppercase mb-4 font-weight-bold ">Nos produits</h6>
                 <p>
-                    <?php
-                      echo '<a href="index.php?page=catalogue.php"
-                        class="btn btn-outline-secondary btn-sm">VTTs</a>'
-                      ?>
+                    <a href="product"
+                        class="btn btn-outline-secondary btn-sm">Packs</a>
+                      
                 </p>
                 <p>
                     <a href="#" class="btn btn-outline-secondary btn-sm">Accessories</a> (à venir)
@@ -197,3 +196,7 @@
 
 </footer>
 <!-- Footer -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>
