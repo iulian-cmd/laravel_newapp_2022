@@ -27,8 +27,8 @@
                 <p class="bg-light card-text"><span class="fw-bold text-center text-secondary">Duration of the adventure: </span><span class="text-uppercase fw-lighter">{{$product->duration}}</span><span class="fw-bold text-center text-secondary"> h </span></p>
                 <p class="bg-light card-text"><span class="fw-bold text-center text-secondary">For clients aged over 14: </span><span class="text-uppercase fw-lighter">{{$product->adult}}</span></p>
                 <p class="bg-light card-text"><span class="fw-bold text-center text-secondary">Level of difficulty: </span><span class="fw-lighter">{{$product->level}}</span></p>   
-            </div>
-            </div>
+        </div>
+        </div>
           
         
         @endforeach
