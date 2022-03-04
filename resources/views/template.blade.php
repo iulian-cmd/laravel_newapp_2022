@@ -1,23 +1,25 @@
 <head class="row">
-  @include('head')
+    @include('head')
 </head>
 
-    <header class="row">
-      @include('navbar')
-    </header>
+<header class="row">
+    @include('navbar')
+</header>
 
-    {{-- @yield('image') --}}
-    
-    <div class="container-fluid bg-light">
-      <div class="row">
-        
-            @yield('content') 
-        </div>
-      </div>
-    {{-- </div> --}}
+<div class="container bg-light">
+    @yield('title')
+</div>
 
-    <footer class="row">
-        @include('footer')
-    </footer>
-      
 
+<div class="container-fluid bg-light">
+<div class="row">
+    {{-- <div class="col">   --}}
+    @yield('content')
+  </div>
+</div>
+{{-- </div> --}}
+
+
+<footer class="row">
+    @include('footer')
+</footer>
