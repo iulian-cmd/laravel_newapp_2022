@@ -14,10 +14,10 @@
                 <a class="nav-link" href="{{ url('/product') }}">Product List</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url('product/{id}') }}">Product Details</a>
+                <a class="nav-link" href="{{ url('/cart') }}">Cart</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url('/cart') }}">Cart</a>
+                <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -1,14 +1,19 @@
 @extends('template')
 
 @section('title')
-   Hello World
+
 @endsection
 
-@section('content_title')
-    Hello!
-@endsection
+
 
 @section('content')
-<img src="https://picsum.photos/id/100/500/400" class="card-img-top my-5 mx-2" alt="random_photo" style="width: 500px; height: 400px">
-<p>This is my homepage content.</p>
+<div class="welcome-txt">
+    <h3>Welcome to Adventure Alps</h3>
+<p class="large">Sport and travel packs in Auvergne-Rhône-Alpes</p>     
+<a class="btn-secondary hidden-md-down" href="{{ url('product') }}">                    
+    View Catalogue
+
+</a>
+</div>
+
 @stop

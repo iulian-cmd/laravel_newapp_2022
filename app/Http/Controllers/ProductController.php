@@ -5,6 +5,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
 class ProductController extends Controller
 {
     public function showList()
@@ -17,7 +18,8 @@ class ProductController extends Controller
 
     public function showProduct($id)
     {
-        return view('product-details', ['name' => $id]);
+        $products = Product::find($id);
+        return view('product-details', ['products'=>$products]);
     }
     
 }
