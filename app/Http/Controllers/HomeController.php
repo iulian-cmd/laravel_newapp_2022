@@ -11,7 +11,4 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function index(){
-        return view('layouts/backoffice');
-    }
 }

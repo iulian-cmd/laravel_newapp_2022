@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\BackOffController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,4 +24,6 @@ Route::get('product/{id}',[ProductController::class, 'showProduct']);
 Route::get('cart', [CartController::class, 'showCart']);
 
 //backoffice
-Route::get('backoffice', [HomeController::class, 'index']);
+Route::resource('backoffice', BackOffController::class);
+Route::get('backhome', [BackOffController::class, 'home']);
+
