@@ -2,7 +2,7 @@
     @include('head')
 </head>
 
-<header class="row">
+<header class="container">
     @include('navbar')
 </header>
 
@@ -11,7 +11,7 @@
 </div>
 
 
-<div class="container-fluid bg-light">
+<div class="container bg-light">
 <div class="row">
     {{-- <div class="col">   --}}
     @yield('content')
