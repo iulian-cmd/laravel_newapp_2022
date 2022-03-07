@@ -1,0 +1,139 @@
+[33mcommit a4a64336067482b3b0f504679601c815e204316e[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Merge: 2caca94 3495585
+Author: iulian <75692549+iulian-cmd@users.noreply.github.com>
+Date:   Fri Mar 4 16:21:12 2022 +0100
+
+    Merge pull request #7 from iulian-cmd/iulian
+    
+    catalogue et detail produit
+
+[33mcommit 2caca9447994668d3e4f334ffb14b9fa70ee57d5[m
+Merge: c889d37 b9ec7a1
+Author: hhendrik81 <74308046+hhendrik81@users.noreply.github.com>
+Date:   Fri Mar 4 16:19:58 2022 +0100
+
+    Merge pull request #6 from iulian-cmd/hendrik
+    
+    Hendrik
+
+[33mcommit b9ec7a19b3f43fb20a198a85aa6d616815824a58[m[33m ([m[1;31morigin/hendrik[m[33m)[m
+Author: hhendrik81 <hhouinou@gmail.com>
+Date:   Fri Mar 4 16:16:25 2022 +0100
+
+    create backoffice
+
+[33mcommit 34955856b105701171b0db813d7fa34e853e74e2[m
+Author: iulian-cmd <flysteelbird@gmail.com>
+Date:   Fri Mar 4 16:13:17 2022 +0100
+
+    catalogue et detail produit
+
+[33mcommit 2e9c06867b8ba586494da44e0f1a87f8044e1dcf[m
+Author: hhendrik81 <hhouinou@gmail.com>
+Date:   Thu Mar 3 16:33:11 2022 +0100
+
+    backoffice first
+
+[33mcommit c889d376885bace5a68ac796abecbdc6e1e9843b[m
+Merge: f5a1092 a47b129
+Author: iulian <75692549+iulian-cmd@users.noreply.github.com>
+Date:   Thu Mar 3 16:28:57 2022 +0100
+
+    Merge pull request #5 from iulian-cmd/iulian
+    
+    refactor tremplater
+
+[33mcommit a47b129852c00930a628e7f11497e6f0c96ea2e3[m
+Author: iulian-cmd <flysteelbird@gmail.com>
+Date:   Thu Mar 3 16:28:00 2022 +0100
+
+    refactor tremplater
+
+[33mcommit 9937539eda605d3fdb7d3364a4b7d896448c9a77[m
+Merge: 9bb14bb f5a1092
+Author: hhendrik81 <hhouinou@gmail.com>
+Date:   Thu Mar 3 14:31:46 2022 +0100
+
+    merge main
+
+[33mcommit f5a1092227d6c9e212a43a167bbe03bdaa097a37[m
+Merge: fe261a0 9c02c8b
+Author: iulian <75692549+iulian-cmd@users.noreply.github.com>
+Date:   Thu Mar 3 14:18:00 2022 +0100
+
+    Merge pull request #4 from iulian-cmd/iulian
+    
+    add model
+
+[33mcommit 9c02c8bde37ef4759f1f1ff39cb339d816074cc0[m
+Author: iulian-cmd <flysteelbird@gmail.com>
+Date:   Thu Mar 3 14:13:46 2022 +0100
+
+    add model
+
+[33mcommit fe261a07547e5ade62936f958511c1bbdb4806be[m
+Merge: 42e822a e9b2bae
+Author: iulian <75692549+iulian-cmd@users.noreply.github.com>
+Date:   Thu Mar 3 13:53:27 2022 +0100
+
+    Merge pull request #3 from iulian-cmd/iulian
+    
+    Iulian
+
+[33mcommit 9bb14bb0c4ccd215cc0573eb721732f08d55671f[m
+Author: hhendrik81 <hhouinou@gmail.com>
+Date:   Thu Mar 3 13:47:06 2022 +0100
+
+    test model
+
+[33mcommit e9b2baeedd41da2f831601c76a7bd8c5a293c37f[m
+Author: iulian-cmd <flysteelbird@gmail.com>
+Date:   Thu Mar 3 13:43:33 2022 +0100
+
+    add footer
+
+[33mcommit a58323689361d047f778706edd1e029e687ef3e7[m
+Author: iulian-cmd <flysteelbird@gmail.com>
+Date:   Wed Mar 2 16:43:59 2022 +0100
+
+    first database retrieve
+
+[33mcommit 42e822a981e9e22e67ecdad7d49ae4089ea9bae6[m
+Merge: f41eeb1 2959dbf
+Author: iulian-cmd <flysteelbird@gmail.com>
+Date:   Wed Mar 2 12:11:32 2022 +0100
+
+    Merge branch 'iulian' into main
+
+[33mcommit 2959dbfc1f93a6979c2e433ba1d5b95108c549d6[m
+Author: iulian-cmd <flysteelbird@gmail.com>
+Date:   Wed Mar 2 12:09:57 2022 +0100
+
+    test branch 2
+
+[33mcommit f41eeb18eb8cdf6ba1863c4406c2c0c933a13094[m
+Merge: f4263db a1b4018
+Author: iulian <75692549+iulian-cmd@users.noreply.github.com>
+Date:   Wed Mar 2 12:05:07 2022 +0100
+
+    Merge pull request #1 from iulian-cmd/iulian
+    
+    test branch
+
+[33mcommit a1b4018b688b27590bd4032d571c03901c4b1c4a[m
+Author: iulian-cmd <flysteelbird@gmail.com>
+Date:   Wed Mar 2 12:00:21 2022 +0100
+
+    test branch
+
+[33mcommit f4263db51bd317e92c98106878b7b0637eec7129[m
+Author: iulian-cmd <flysteelbird@gmail.com>
+Date:   Wed Mar 2 11:52:09 2022 +0100
+
+    added migrate
+
+[33mcommit b5accc7d39f3101d76cc5e66ea1ce4e513c44eae[m
+Author: iulian-cmd <flysteelbird@gmail.com>
+Date:   Tue Mar 1 15:48:47 2022 +0100
+
+    first commit
