@@ -11,12 +11,12 @@ Catalogue
 {{-- <div class="d-flex justify-content-between"> --}}
     @foreach($products as $product)
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-6 col-lg-4">
-    <div class="card p-3 m-2 shadow mb-5 bg-body rounded">
+    <div class="card p-3 m-1 shadow mb-4 rounded">
         <img
             src="{{$product->image}}"
-            class="card-img-top shadow p-0 mb-2 bg-body rounded"
+            class="card-img-top p-0 mb-2 rounded"
             alt="image_of_product"
-            style="height: 15vw; object-fit: cover"
+            style="height: 30vh; object-fit: cover"
         />
         <div class="card-body">
             <h5 class="bg-light card-title text-center mb-3">
@@ -98,7 +98,7 @@ Catalogue
                 <input type="hidden" value="{{ $product->price }}" name="price">
                 <input type="hidden" value="{{ $product->image }}"  name="image">
                 <input type="hidden" value="1" name="quantity">
-                <button class="px-4 py-2 text-white bg-blue-800 rounded">Add To Cart</button>
+                <button class="btn btn-success rounded my-2">Add To Cart</button>
             </form>
         </div>
         </div>
