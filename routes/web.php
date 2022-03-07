@@ -1,5 +1,7 @@
 <?php
 
+
+namespace App\Http\CartControllers;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -21,9 +23,13 @@ Route::get('/', [HomeController::class, 'showHome']);
 Route::get('home', [HomeController::class, 'showHome']);
 Route::get('product', [ProductController::class, 'showList']);
 Route::get('product/{id}',[ProductController::class, 'showProduct']);
-Route::get('cart', [CartController::class, 'showCart']);
+
+//Cart
+Route::get('cart', [CartController::class, 'showCart'])->name('cart');
+Route::get('cart/{id}', [CartController::class, 'showCart2'])->name('cart');
+Route::get('add-to-cart', 'CartController@addToCart');
+Route::get('add-to-cart/{id}', 'CartController@getAddToCart')->name('addCart');
 
 //backoffice
 Route::resource('backoffice', BackOffController::class);
 Route::get('backhome', [BackOffController::class, 'home']);
-

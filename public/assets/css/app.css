@@ -19,3 +19,16 @@
 p.large {
     font-size: 24px;
 }
+
+#cart_title {
+    font-family: 'Asset', cursive !important;
+    font-size: 1.5em;
+    color: rgb(0, 140, 255);
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#details {
+    width: 80%;
+}

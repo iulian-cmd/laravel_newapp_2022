@@ -90,8 +90,7 @@ Catalogue
                     View Product Details
                 </button></a
             >
-            <a href="{{ url('cart', [$product->id]) }}"
-                ><button class="btn btn-success rounded my-2">Add to Cart</button></a
+            <a href="{{ route('addCart', ['id' => $product->id]) }}"><button class="btn btn-success rounded my-2">Add to Cart</button></a
             >
         </div>
         </div>
