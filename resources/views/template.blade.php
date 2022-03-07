@@ -11,7 +11,7 @@
 </div>
 
 <div class="container bg-light">
-    <div class="row gx-0">
+    <div class="row g-0">
         @yield('content')
     </div>
 </div>

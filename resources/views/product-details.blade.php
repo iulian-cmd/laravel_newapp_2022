@@ -8,10 +8,10 @@
 @section('content')
 <div class="container d-flex justify-content-center">
 
-    <div class="card p-2 m-3 shadow mb-5 bg-body rounded" id="details">
+    <div class="card p-2 m-3 shadow mb-5 rounded" id="details">
         <img
             src="{{$products->image}}"
-            class="card-img-top shadow p-2 mb-3 bg-body rounded"
+            class="card-img-top shadow p-2 mb-3 rounded"
             alt="image_of_products"
             style="height: 15vw; object-fit: cover"
         />
@@ -88,9 +88,15 @@
                 Back to Trips
             </button></a
             >
-            <a href="{{ url('cart', [$products->id]) }}"
-            ><button class="btn btn-success rounded">Add to Cart</button></a
-            >
+            <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" value="{{ $products->id }}" name="id">
+                <input type="hidden" value="{{ $products->name }}" name="name">
+                <input type="hidden" value="{{ $products->price }}" name="price">
+                <input type="hidden" value="{{ $products->image }}"  name="image">
+                <input type="hidden" value="1" name="quantity">
+                <button class="btn btn-success rounded my-2">Add To Cart</button>
+            </form>
         </div>
     </div>
 </div>
