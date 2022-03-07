@@ -10,15 +10,11 @@
     @yield('title')
 </div>
 
-
 <div class="container bg-light">
-<div class="row">
-    {{-- <div class="col">   --}}
-    @yield('content')
-  </div>
+    <div class="row gx-0">
+        @yield('content')
+    </div>
 </div>
-{{-- </div> --}}
-
 
 <footer class="row">
     @include('footer')

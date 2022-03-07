@@ -10,11 +10,11 @@ Catalogue
 
 {{-- <div class="d-flex justify-content-between"> --}}
     @foreach($products as $product)
-    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-6 col-lg-4 ">
-    <div class="card p-2 m-1 shadow mb-5 bg-body rounded">
+    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-6 col-lg-4">
+    <div class="card p-3 m-2 shadow mb-5 bg-body rounded">
         <img
             src="{{$product->image}}"
-            class="card-img-top shadow p-2 mb-3 bg-body rounded"
+            class="card-img-top shadow p-0 mb-2 bg-body rounded"
             alt="image_of_product"
             style="height: 15vw; object-fit: cover"
         />
@@ -72,7 +72,7 @@ Catalogue
                     >Level of difficulty: </span
                 ><span class="fw-lighter">
                     @if ($product->level == '5') 
-                       <img src="{{asset('assets/imgs/difficulty5.png')}}" />
+                       <img src="{{asset('assets/imgs/difficulty5.png')}}"/>
                     @elseif ($product->level == '4') 
                        <img src="{{asset('assets/imgs/difficulty4.png')}}" />
                     @elseif ($product->level == '3') 
@@ -90,9 +90,16 @@ Catalogue
                     View Product Details
                 </button></a
             >
-            <a href="{{ url('cart', [$product->id]) }}"
-                ><button class="btn btn-success rounded my-2">Add to Cart</button></a
-            >
+           
+            <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" value="{{ $product->id }}" name="id">
+                <input type="hidden" value="{{ $product->name }}" name="name">
+                <input type="hidden" value="{{ $product->price }}" name="price">
+                <input type="hidden" value="{{ $product->image }}"  name="image">
+                <input type="hidden" value="1" name="quantity">
+                <button class="px-4 py-2 text-white bg-blue-800 rounded">Add To Cart</button>
+            </form>
         </div>
         </div>
     </div>
