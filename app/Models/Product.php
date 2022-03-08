@@ -9,6 +9,10 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $table = 'product';
     protected $fillable = ['name', 'image', 'description', 'price'];
+
+    public function category()
+    {
+       return $this->belongsTo(Category::class);
+    }
 }

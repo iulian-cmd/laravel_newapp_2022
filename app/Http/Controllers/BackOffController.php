@@ -37,13 +37,13 @@ class BackOffController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'name',
-            'image',
-            'description',
-            'price'
+            'name' => 'required', 'max:255',
+            'image' => 'required', 'max:255',
+            'description' => 'required', 'max:255',
+            'price' => 'required', 'numeric',
         ]);
 
-        $products = Product::create($validatedData);
+       Product::create($validatedData);
 
         return redirect('/backoffice')->with('success', 'Produit créé avec succèss');
     }
@@ -85,7 +85,7 @@ class BackOffController extends Controller
             'name' => 'required|max:255',
             'image' => 'required',
             'description' => 'required|max:255',
-            'price' => 'required',
+            'price' => 'required','numeric',
         ]);
 
         Product::whereId($id)->update($validatedData);
