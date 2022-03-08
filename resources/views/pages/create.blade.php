@@ -41,8 +41,8 @@
         </div>
 
           <div class="form-group">
-              <label for="prix">Prix :</label>
-              <input type="text" class="form-control" name="prix"/>
+              <label for="price">Prix :</label>
+              <input type="text" class="form-control" name="price"/>
           </div>
           <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
       </form>
