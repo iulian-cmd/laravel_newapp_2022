@@ -6,7 +6,7 @@
     @include('navbar')
 </header>
 
-<div class="container bg-light">
+<div id="catalogue" class="container bg-light text-center">
     @yield('title')
 </div>
 

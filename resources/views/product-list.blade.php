@@ -1,14 +1,10 @@
 @extends('template')
 
 @section('title')
-<div id="catalogue" class="container-fluid bg-light text-center">
 Catalogue
-</div>
 @endsection
 
 @section('content')
-
-{{-- <div class="d-flex justify-content-between"> --}}
     @foreach($products as $product)
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-6 col-lg-4">
     <div class="card p-3 m-1 shadow mb-4 rounded">
@@ -106,8 +102,5 @@ Catalogue
     </div>
 
     @endforeach
-{{-- </div> --}}
-
-
 
 @endsection
