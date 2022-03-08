@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\CartControllers;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;

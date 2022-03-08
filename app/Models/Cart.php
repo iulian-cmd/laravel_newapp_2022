@@ -13,4 +13,5 @@ class Cart extends Model
     {
         return $this->hasMany('App\Models\Cart')->sum('quantity');
     }
+    
 }
