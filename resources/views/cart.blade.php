@@ -2,8 +2,8 @@
 
 @section('content_cart')
 <!-- SHOP BASKET SECTION-->
-<section class="py-5">
-    <div class="container py-4 bg-white opacity-75">
+<section class="py-5 rounded-2">
+    <div class="container pt-2 pb-4 bg-white opacity-75">
         <p class="text-muted lead mb-5">
             @if ($message = Session::get('success'))
         <div class="p-4 mb-3 text-success rounded fs-5">
@@ -15,84 +15,83 @@
         <div class="row">
             <div class="col-lg-9">
                 <!-- CART PRODUCTS TABLE-->
-                <form method="get" action="shop-checkout1.html">
-                    <div class="table-responsive">
-                        <table class="table table-light table-striped">
-                            <thead>
-                                <tr class="text-sm">
-                                    <th class="border border-light border-top py-3" colspan="2">Product</th>
-                                    <th class="border border-light border-top py-3">Quantity</th>
-                                    <th class="border border-light border-top py-3">Unit price</th>
-                                    <th class="border border-light border-top py-3">Discount</th>
-                                    <th class="border border-light border-top py-3">Total</th>
-                                    <th class="border border-light border-top py-3">Remove</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($cartItems as $item)
-                                <tr class="text-sm">
-                                    <td class="align-middle border border-light py-3"><a href="#"><img
-                                                class="img-fluid flex-shrink-0" src="{{ $item->attributes->image }}"
-                                                alt="Thumbnail" style="min-width: 50px" width="100"></a></td>
-                                    <td class="align-middle border border-light py-3">{{ $item->name }}
-                                    </td>
-                                    <td class="align-middle border border-light py-3">
-                                        <form action="{{ route('cart.update') }}" method="POST">
-                                            @csrf
-                                            <input type="hidden" name="id" value="{{ $item->id}}">
-                                            <input type="number" name="quantity" value="{{ $item->quantity }}"
-                                                class="w-6 text-center bg-gray-300" />
-                                            <button type="submit"
-                                                class="px-2 pb-2 ml-2 text-white bg-blue-500">update</button>
-                                        </form>
-                                    </td>
-                                    <td class="align-middle border border-light py-3">${{ $item->price }}</td>
-                                    <td class="align-middle border border-light py-3">$0.00</td>
-                                    <td class="align-middle border border-light py-3">$246.00</td>
-                                    <td class="align-middle border border-light py-3">
-                                        <form action="{{ route('cart.remove') }}" method="POST">
-                                            @csrf
-                                            <input type="hidden" value="{{ $item->id }}" name="id">
-                                            <button class="align-middle px-4 py-2 text-danger
-                                                rounded-circle btn-border-light">X</button>
-                                        </form>
+                <div class="table-responsive">
+                    <table class="table table-light table-striped">
+                        <thead>
+                            <tr class="text-sm">
+                                <th class="border border-light border-top py-3" colspan="2">Product</th>
+                                <th class="border border-light border-top py-3">Quantity</th>
+                                <th class="border border-light border-top py-3">Unit price</th>
+                                <th class="border border-light border-top py-3">Discount</th>
+                                <th class="border border-light border-top py-3">Total</th>
+                                <th class="border border-light border-top py-3">Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($cartItems as $item)
+                            <tr class="text-sm bg-light">
+                                <td class="align-items-center border border-light py-3"><img
+                                        class="img-fluid flex-shrink-0" src="{{ $item->attributes->image }}"
+                                        alt="Thumbnail" style="min-width: 50px; width:100; height:100;"></td>
+                                <td class="align-items-center border border-light py-3">{{ $item->name }}
+                                </td>
+                                <td class="align-items-center border border-light py-3 px-1">
+                                    <form action="{{ route('cart.update') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{ $item->id}}">
+                                        <input type="number" name="quantity" value="{{ $item->quantity }}"
+                                            class="text-center bg-light input-group input-group-sm" size="2"
+                                            maxlength="2" />
+                                        <button type="submit"
+                                            class="align-items-center px-4 py-2 btn btn-success">update</button>
+                                    </form>
+                                </td>
+                                <td class="align-items-center border border-light py-3">${{ $item->price }}</td>
+                                <td class="align-items-center border border-light py-3">$0.00</td>
+                                <td class="align-items-center border border-light py-3">$246.00</td>
+                                <td class="align-items-center border border-light py-3">
+                                    <form action="{{ route('cart.remove') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" value="{{ $item->id }}" name="id">
+                                        <button class="align-items-center px-4 py-2 btn btn-danger">remove</button>
+                                    </form>
 
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th class="py-3 border-0" colspan="5"> <span
-                                            class="h4 text-gray-700 mb-0">Total</span></th>
-                                    <th class="py-3 border-0 text-end" colspan="2"> <span
-                                            class="h4 text-gray-700 mb-0">${{ Cart::getTotal() }}</span></th>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                    <!-- NAVIGATION FOOTER-->
-                    <div class="row gx-lg-0 align-items-center bg-light px-4 py-3 text-center mb-5">
-                        <div class="col-md-6 text-md-start py-1">
-                            <form action="{{ route('home') }}">
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th class="py-3 border-0" colspan="5"> <span class="h4 text-gray-700 mb-0">Total</span>
+                                </th>
+                                <th class="py-3 border-0 text-end" colspan="2"> <span
+                                        class="h4 text-gray-700 mb-0">${{ Cart::getTotal() }}</span></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <!-- NAVIGATION FOOTER-->
+                <div class="row gx-lg-0 align-items-center bg-light px-4 py-3 text-center mb-5">
+                    <div class="col-md-6 text-md-start py-1">
+                        <form action="{{ route('product.list') }}">
 
-                                <button class="btn btn-secondary my-1">Continue shopping</button>
-                            </form>
-                        </div>
-                        <div class="col-md-6 text-md-end py-1">
-                            <form action="{{ route('cart.clear') }}" method="POST">
-                                @csrf
-                                <button class="btn btn-secondary my-1">Remove All Cart</button>
-                            </form>
-                        </div>
-                        <div>
-                            <form action="{{ route('home') }}">
-                                <button class="btn btn-outline-primary my-1" type="submit">Proceed to checkout <i
-                                        class="fas fa-angle-right ms-1"></i></button>
-                            </form>
-                        </div>
+                            <button class="btn btn-outline-secondary my-1">Continue shopping</button>
+                        </form>
                     </div>
-                </form>
+                    <div class="col-md-6 text-md-end py-1">
+                        <form action="{{ route('cart.clear') }}" method="POST">
+                            @csrf
+                            <button class="btn btn-outline-secondary my-1">Remove All Cart</button>
+                        </form>
+                    </div>
+                    <div>
+                        <form action="{{ route('home') }}">
+                            <button class="btn btn-outline-primary my-1" type="submit">Proceed to checkout <i
+                                    class="fas fa-angle-right ms-1"></i></button>
+                        </form>
+                    </div>
+                </div>
+
             </div>
             <!-- CHECKOUT SIDEBAR [ORDER SUMMARY]-->
             <div class="col-lg-3">
