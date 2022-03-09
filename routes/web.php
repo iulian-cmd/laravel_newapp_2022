@@ -1,6 +1,4 @@
 <?php
-
-
 namespace App\Http\CartControllers;
 
 use App\Http\Controllers\CartController;
@@ -19,7 +17,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', [HomeController::class, 'showHome']);
 Route::get('home', [HomeController::class, 'showHome']);
 Route::get('product', [ProductController::class, 'showList']);
@@ -33,5 +30,11 @@ Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove'
 Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 
 //backoffice
-Route::resource('backoffice', BackOffController::class);
+Route::resource('backoffice', BackOffController::class)->middleware(['auth']);
 Route::get('backhome', [BackOffController::class, 'home']);
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

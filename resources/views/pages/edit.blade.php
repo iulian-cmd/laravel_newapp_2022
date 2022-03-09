@@ -44,10 +44,20 @@
         </div>
 
           <div class="form-group">
-              <label for="cases">Prix :</label>
+              <label for="prix">Prix :</label>
               <input type="text" class="form-control" name="prix" value="{{ $products->price }}"/>
           </div>
-          <button type="submit" class="btn btn-primary">Modifier</button>
+
+          <div class="form-group">
+            <label for="category_id">Catégorie :</label>
+            <select class="form-control" name="category_id">
+                <option value="">--Please choose an category--</option>
+                @foreach ( $categories as $category )
+                <option value="{{ $category->id }}">{{ $category->name}}</option>
+                @endforeach
+            </select>
+        </div>
+          <button type="submit" class="btn btn-primary mt-3">Modifier</button>
       </form>
   </div>
 </div>

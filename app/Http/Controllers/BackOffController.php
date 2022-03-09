@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -41,6 +42,7 @@ class BackOffController extends Controller
             'image' => 'required', 'max:255',
             'description' => 'required', 'max:255',
             'price' => 'required', 'numeric',
+            'category',
         ]);
 
        Product::create($validatedData);
@@ -68,8 +70,8 @@ class BackOffController extends Controller
     public function edit($id)
     {
         $products = Product::findOrFail($id);
-
-        return view('pages/edit', compact('products'));
+        $categories = Category::all();//pluck('name', 'id');
+        return view('pages/edit', compact('products', 'categories'));
     }
 
     /**
@@ -85,10 +87,11 @@ class BackOffController extends Controller
             'name' => 'required|max:255',
             'image' => 'required',
             'description' => 'required|max:255',
-            'price' => 'required','numeric',
+            'prix' =>'required|integer',
+            'category_id' => 'required',
         ]);
-
-        Product::whereId($id)->update($validatedData);
+        
+        Product::findOrFail($id)->update($validatedData);
 
         return redirect('/backoffice')->with('success', 'Produit mis à jour avec succèss');
     }
