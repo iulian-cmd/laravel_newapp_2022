@@ -28,9 +28,10 @@
     @yield('home')
 </div>
 
+<div class="cart">
+    @yield('content_cart')
+</div>
 
 <footer>
     @include('footer')
 </footer>
-
-

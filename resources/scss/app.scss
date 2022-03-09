@@ -1,13 +1,11 @@
 @import "bootstrap";
 
-
-#catalogue{ 
-  font-family: 'Asset', cursive !important;
-  font-size: 3rem;
-  color: #e01405;
-  text-align: center;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+html, body{
+  height: 100%;
+  background-image: url("{{asset('../../../../public/assets/imgs/background_beige.jpg");
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .welcome-txt{
@@ -40,25 +38,17 @@ h3.welcome-txt{
   padding-bottom: 20px;
 }
 
-
-#cart_title {
-  font-family: 'Asset', cursive !important;
-  font-size: 1.5em;
-  color: rgb(0, 140, 255);
-  text-align: center;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
 #details {
   width: 80%;
 }
 
-body{
+#body{
   margin:0;
   padding:0;
   height:100%;
+
   background-image: url("{{asset('../../../../public/assets/imgs/background.jpg");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
