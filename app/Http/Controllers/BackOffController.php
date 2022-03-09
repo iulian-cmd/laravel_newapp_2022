@@ -42,6 +42,7 @@ class BackOffController extends Controller
             'image' => 'required', 'max:255',
             'description' => 'required', 'max:255',
             'price' => 'required', 'numeric',
+            'category',
         ]);
 
        Product::create($validatedData);
@@ -86,10 +87,11 @@ class BackOffController extends Controller
             'name' => 'required|max:255',
             'image' => 'required',
             'description' => 'required|max:255',
-            'price' =>'numeric',
+            'prix' =>'required|integer',
+            'category_id' => 'required',
         ]);
-
-        Product::whereId($id)->update($validatedData);
+        
+        Product::findOrFail($id)->update($validatedData);
 
         return redirect('/backoffice')->with('success', 'Produit mis à jour avec succèss');
     }

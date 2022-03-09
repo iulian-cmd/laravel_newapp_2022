@@ -53,11 +53,11 @@
             <select class="form-control" name="category_id">
                 <option value="">--Please choose an category--</option>
                 @foreach ( $categories as $category )
-                <option value="{{ $category->name }}">{{ $category->name}}</option>
+                <option value="{{ $category->id }}">{{ $category->name}}</option>
                 @endforeach
             </select>
         </div>
-          <button type="submit" class="btn btn-primary">Modifier</button>
+          <button type="submit" class="btn btn-primary mt-3">Modifier</button>
       </form>
   </div>
 </div>
