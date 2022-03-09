@@ -86,7 +86,7 @@ Catalogue
                     View Product Details
                 </button></a
             >
-           
+            <a href="{{url('/cart/add/'.$product->id)}}">
             <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" value="{{ $product->id }}" name="id">
@@ -96,7 +96,8 @@ Catalogue
                 <input type="hidden" value="1" name="quantity">
                 <button class="btn btn-success rounded my-2">Add To Cart</button>
             </form>
-        
+            </a
+            >
         </div>
         </div>
     </div>
