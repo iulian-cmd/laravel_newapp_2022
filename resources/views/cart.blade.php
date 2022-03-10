@@ -2,21 +2,21 @@
 
 @section('content_cart')
 <!-- SHOP BASKET SECTION-->
-<section class="py-5 rounded-2">
+<section class="py-5">
     <div class="container pt-2 pb-4 bg-white opacity-75">
         <p class="text-muted lead mb-5">
             @if ($message = Session::get('success'))
-        <div class="p-4 mb-3 rounded fs-5">
+        <div class="p-4 mb-3 fs-5">
             <p class="text-success">{{ $message }}</p>
         </div>
         @endif
         </p>
-        <h3 class="fs-3 text-center text-uppercase mb-3">Cart List</h3>
+        <h3 class="fs-3 text-center text-uppercase my-3 rounded-top">Cart List</h3>
         <div class="row">
             <div class="col-lg-9">
                 <!-- CART PRODUCTS TABLE-->
                 <div class="table-responsive">
-                    <table class="table table-light table-striped align-items-center text-uppercase">
+                    <table class="table table-light table-striped align-items-center text-uppercase text-center">
                         <thead>
                             <tr class="text-sm" style='width: 10%;
                             background: brown !important;
@@ -35,17 +35,17 @@
                                 <td class="border border-light py-3"><a href="{{url('/product/'.$item->id)}}"><img
                                             class="img-fluid flex-shrink-0" src="{{ $item->attributes->image }}"
                                             alt="Thumbnail" style="min-width: 50px; width:100; height:100;"></a></td>
-                                <td class="border border-light py-3">
+                                <td class="border border-light py-3 text-start">
                                     {{ $item->name }}
                                 </td>
-                                <td>
+                                <td class="border border-light py-3 px-1" >
                                     <form action="{{ route('cart.update') }}" method="POST"
                                         class="d-flex justify-content-evenly flex-row">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $item->id}}">
                                         <input type="number" name="quantity" value="{{ $item->quantity }}"
-                                            class="text-center form-control form-control-sm" style="width: 4rem;" />
-                                        <h3><button class="px-2 py-2 btn btn-success"><svg
+                                            class="text-center bg-light form-control form-control-sm" style="width: 4rem;" />
+                                        <h3><button class="px-2 py-2 btn btn-success border-2"><svg
                                                     xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     fill="currentColor" class="bi bi-arrow-clockwise"
                                                     viewBox="0 0 16 16">
@@ -56,9 +56,9 @@
                                                 </svg></button></h3>
                                     </form>
                                 </td>
-                                <td class="border border-light py-3">${{ $item->price }}</td>
-                                <td class="border border-light py-3">$0.00</td>
-                                <td class="border border-light py-3">${{ $item->price * $item->quantity }}</td>
+                                <td class="border border-light py-3">EUR {{ $item->price }}</td>
+                                <td class="border border-light py-3">EUR 0</td>
+                                <td class="border border-light py-3">EUR {{ $item->price * $item->quantity }}</td>
                                 <td class="border border-light py-3">
                                     <form action="{{ route('cart.remove') }}" method="POST">
                                         @csrf
@@ -79,11 +79,10 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th class="py-3 border-0" colspan="5"> <span class="h4 text-gray-700 mb-0">Total
-                                        Order</span>
+                                <th class="py-3 border-0 text-end" colspan="5"> <span class="h4 text-dark mb-0 text-capitalize">Subtotal</span>
                                 </th>
                                 <th class="py-3 border-0 text-end" colspan="2"> <span
-                                        class="h4 text-dark mb-0">${{ Cart::getTotal() }}</span></th>
+                                        class="h4 text-dark mb-0 text-end fw-bold">EUR {{ Cart::getTotal() }}</span></th>
                             </tr>
                         </tfoot>
                     </table>
@@ -126,25 +125,25 @@
                                         <th class="text-muted"> <span class="d-block py-1 fw-normal">Order
                                                 subtotal</span></th>
                                         <th> <span
-                                                class="d-block py-1 fw-normal text-end">${{ Cart::getTotal() }}</span>
+                                                class="d-block py-1 fw-normal text-end">EUR {{ Cart::getTotal() }}</span>
                                         </th>
                                     </tr>
                                     <tr>
                                         <th class="text-muted"> <span class="d-block py-1 fw-normal">Insurance for
                                                 cancelling</span></th>
-                                        <th> <span class="d-block py-1 fw-normal text-end">$5.00</span></th>
+                                        <th> <span class="d-block py-1 fw-normal text-end">EUR 5</span></th>
                                     </tr>
                                     <tr>
                                         <th class="text-muted"> <span class="d-block py-1 fw-normal">Additional not
                                                 hidden tax</span></th>
-                                        <th> <span class="d-block py-1 fw-normal text-end">$5.00</span></th>
+                                        <th> <span class="d-block py-1 fw-normal text-end">EUR 5</span></th>
                                     </tr>
                                     <tr class="total">
                                         <td class="py-3 border-bottom-0 text-muted"> <span
-                                                class="lead fw-bold">Total</span>
+                                                class="lead fw-bold">Total Amount</span>
                                         </td>
                                         <th class="pt-3 border-bottom-0"> <span
-                                                class="lead fw-bold text-end">${{ Cart::getTotal() + 10 }}</span>
+                                                class="lead fw-bold text-end">EUR {{ Cart::getTotal() + 10 }}</span>
                                         </th>
                                     </tr>
                                 </tbody>
@@ -157,21 +156,11 @@
                         <h4 class="text-uppercase mb-0">Coupon code</h4>
                     </div>
                     <div class="bg-light py-4 px-3">
-
-
-
-
-
-
-
-
-
-
                         <p class="text-muted">If you have a coupon code, please enter it in the box below.</p>
                         <form action="#">
                             <div class="input-group">
                                 <input class="form-control" type="text">
-                                <button class="btn btn-primary" type="submit"><i class="fas fa-gift"></i></button>
+                                <button class="btn btn-primary" type="submit"></button>
                             </div>
                         </form>
                     </div>

@@ -31,6 +31,9 @@
 <div class="cart">
     @yield('content_cart')
 </div>
+<div class="contact_page">
+    @yield('contact_page')
+</div>
 
 <footer>
     @include('footer')

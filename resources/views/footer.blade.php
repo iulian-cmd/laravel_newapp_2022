@@ -147,7 +147,7 @@
 
         <!-- Grid row -->
         <div class="row d-flex align-items-center">
-            <p class="text-center text-md-center">© 2021 Copyright:
+            <p class="text-center text-md-center">© 2022 Copyright:
                 <strong> hendrik and iulian </strong>
             </p>
             <!-- Grid column -->

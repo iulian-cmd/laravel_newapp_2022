@@ -1,7 +1,7 @@
 <div class="container-fluid fw-bold fs-4">
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand text-success" href="#">Adventure Alps</a>
+            <a class="navbar-brand text-success" href=""><img src="{{asset('assets/imgs/logo_dark_noback.png')}}" alt="Logo" class="img rounded" style="width:100px; height:100px;"/></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -10,16 +10,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ url('/home') }}">Home</a>
+                        <a class="nav-link {{request()->routeIs('home') ? 'active text-danger' : '' }}" aria-current="page" href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/product') }}">Product List</a>
+                        <a class="nav-link {{request()->routeIs('product.list') ? 'active text-danger' : '' }}" href="{{ route ('product.list') }}">Product List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('cart.list') }}">Cart</a>
+                        <a class="nav-link {{request()->routeIs('cart.list') ? 'active text-danger' : '' }}" href="{{ route ('cart.list') }}">Cart</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
+                        <a class="nav-link {{request()->routeIs('contact') ? 'active text-danger' : '' }}" href="{{ route ('contact') }}">Contact</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -27,7 +27,7 @@
                             Dropdown
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item nav-link {{request()->routeIs('Action') ? 'active' : '' }}" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li>
                                 <hr class="dropdown-divider">
