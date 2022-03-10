@@ -6,10 +6,10 @@
     <div class="container pt-2 pb-4 bg-white opacity-75">
         <p class="text-muted lead mb-5">
             @if ($message = Session::get('success'))
-            <div class="p-4 mb-3 rounded fs-5">
-                <p class="text-success">{{ $message }}</p>
-            </div>
-            @endif
+        <div class="p-4 mb-3 rounded fs-5">
+            <p class="text-success">{{ $message }}</p>
+        </div>
+        @endif
         </p>
         <h3 class="fs-3 text-center text-uppercase">Cart List</h3>
         <div class="row">
@@ -32,17 +32,19 @@
                         <tbody>
                             @foreach ($cartItems as $item)
                             <tr class="text-sm">
-                                <td class="border border-light py-3"><img
-                                        class="img-fluid flex-shrink-0" src="{{ $item->attributes->image }}"
-                                        alt="Thumbnail" style="min-width: 50px; width:100; height:100;"></td>
+                                <td class="border border-light py-3"><img class="img-fluid flex-shrink-0"
+                                        src="{{ $item->attributes->image }}" alt="Thumbnail"
+                                        style="min-width: 50px; width:100; height:100;"></td>
                                 <td class="border border-light py-3">{{ $item->name }}
                                 </td>
-                                <td class="border border-light py-3 px-1" >
-                                    <form action="{{ route('cart.update') }}" method="POST" class="d-flex justify-content-center flex-row">
+                                <td class="border border-light py-3 px-1">
+                                    <form action="{{ route('cart.update') }}" method="POST"
+                                        class="d-flex justify-content-center flex-row">
                                         @csrf
-                                        <input type="hidden" name="id" value="{{ $item->id}}" >
+                                        <input type="hidden" name="id" value="{{ $item->id}}">
                                         <input type="number" name="quantity" value="{{ $item->quantity }}"
-                                            class="text-center bg-light form-control form-control-sm" style="width: 3rem;"/>
+                                            class="text-center bg-light form-control form-control-sm"
+                                            style="width: 3rem;" />
                                         <button type="submit"
                                             class="mx-1 px-2 py-2 btn btn-success border-2">update</button>
                                     </form>
@@ -63,7 +65,8 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th class="py-3 border-0" colspan="5"> <span class="h4 text-gray-700 mb-0">Total Order</span>
+                                <th class="py-3 border-0" colspan="5"> <span class="h4 text-gray-700 mb-0">Total
+                                        Order</span>
                                 </th>
                                 <th class="py-3 border-0 text-end" colspan="2"> <span
                                         class="h4 text-dark mb-0">${{ Cart::getTotal() }}</span></th>
@@ -112,11 +115,13 @@
                                         <th> <span class="d-block py-1 fw-normal text-end">$446.00</span></th>
                                     </tr>
                                     <tr>
-                                        <th class="text-muted"> <span class="d-block py-1 fw-normal">Insurance for cancelling</span></th>
+                                        <th class="text-muted"> <span class="d-block py-1 fw-normal">Insurance for
+                                                cancelling</span></th>
                                         <th> <span class="d-block py-1 fw-normal text-end">$5.00</span></th>
                                     </tr>
                                     <tr>
-                                        <th class="text-muted"> <span class="d-block py-1 fw-normal">Additional not hidden tax</span></th>
+                                        <th class="text-muted"> <span class="d-block py-1 fw-normal">Additional not
+                                                hidden tax</span></th>
                                         <th> <span class="d-block py-1 fw-normal text-end">$5.00</span></th>
                                     </tr>
                                     <tr class="total">
