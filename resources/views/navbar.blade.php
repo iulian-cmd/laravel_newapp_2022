@@ -40,8 +40,9 @@
                     </li>
                 </ul>
                 <form class="d-flex mt-3 pt-2">
-                    <input class="form-control me-3" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit">Search</button>
+                    <input class="form-control me-3 btn-outline-light" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <button class="btn btn-outline-dark" type="submit">Search</button>
                 </form>
             </div>
         </div>
