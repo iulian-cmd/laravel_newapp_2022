@@ -41,7 +41,7 @@ class BackOffController extends Controller
             'name' => 'required', 'max:255',
             'image' => 'required', 'max:255',
             'description' => 'required', 'max:255',
-            'price' => 'required', 'numeric',
+            'prix' => 'required', 'numeric',
             'category',
         ]);
 
@@ -87,10 +87,10 @@ class BackOffController extends Controller
             'name' => 'required|max:255',
             'image' => 'required',
             'description' => 'required|max:255',
-            'prix' =>'required|integer',
+            'price' =>'required|integer',
             'category_id' => 'required',
         ]);
-        
+        //dd(Product::findOrFail($id));
         Product::findOrFail($id)->update($validatedData);
 
         return redirect('/backoffice')->with('success', 'Produit mis à jour avec succèss');
@@ -110,8 +110,8 @@ class BackOffController extends Controller
         return redirect('/backoffice')->with('success', 'Produit supprimé avec succèss');
     }
 
-    public function home()
-    {
-        return view('pages/homeBackOff');
-    }
+    // public function home()
+    // {
+    //     return view('pages/homeBackOff');
+    // }
 }
