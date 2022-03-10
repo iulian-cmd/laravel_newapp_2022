@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Session;
+use Cart;
 
 class CartController extends Controller
 {
@@ -63,5 +64,12 @@ class CartController extends Controller
         session()->flash('success', 'All Item Cart Clear Successfully !');
 
         return redirect()->route('cart.list');
+    }
+
+   public function total()
+    {
+        return Cart::total();
+        
+        
     }
 }
