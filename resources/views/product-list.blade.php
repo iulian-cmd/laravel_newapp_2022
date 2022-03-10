@@ -43,18 +43,23 @@
                     class="text-uppercase fw-lighter">{{$product->adult}}</span>
             </p>
             <p class="bg-light card-text">
-                <span class="fw-bold text-center text-secondary">Level of difficulty: </span><span class="fw-lighter">
-                    @if ($product->level == '5')
+                <span class="fw-bold text-center text-secondary">Level of difficulty: </span><span class="fw-lighter">               
+                    @switch($product->level)
+                    @case('5')
                     <img src="{{asset('assets/imgs/difficulty5.png')}}" />
-                    @elseif ($product->level == '4')
+                    @break
+                    @case('4')
                     <img src="{{asset('assets/imgs/difficulty4.png')}}" />
-                    @elseif ($product->level == '3')
+                    @break
+                    @case('3')
                     <img src="{{asset('assets/imgs/difficulty3.png')}}" />
-                    @elseif ($product->level == '2')
+                    @break
+                    @case('2')
                     <img src="{{asset('assets/imgs/difficulty2.png')}}" />
-                    @else
+                    @break
+                    @default
                     <img src="{{asset('assets/imgs/difficulty1.png')}}" />
-                    @endif
+                    @endswitch
                 </span>
             </p>
             <div class="d-flex justify-content-between">

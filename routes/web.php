@@ -23,6 +23,7 @@ Route::get('/', [HomeController::class, 'showHome']);
 Route::get('home', [HomeController::class, 'showHome'])->name('home');
 Route::get('product', [ProductController::class, 'showList'])->name('product.list');
 Route::get('product/{id}',[ProductController::class, 'showProduct'])->name('product.detail/{id}');
+Route::get('contact', [ContactController::class, 'showContact'])->name('contact');
 
 //Cart
 Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
