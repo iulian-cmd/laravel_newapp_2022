@@ -4,7 +4,7 @@
 Catalogue
 @endsection
 
-@section('content')
+@section('product-list')
     @foreach($products as $product)
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-6 col-lg-4">
     <div class="card p-3 m-1 shadow mb-4 rounded">
@@ -96,6 +96,7 @@ Catalogue
                 <input type="hidden" value="1" name="quantity">
                 <button class="btn btn-success rounded my-2">Add To Cart</button>
             </form>
+        
         </div>
         </div>
     </div>

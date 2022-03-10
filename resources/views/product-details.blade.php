@@ -5,17 +5,21 @@
 @endsection
 
 
-@section('content')
-<div class="container d-flex justify-content-center">
+@section('product-details')
+<div class="container d-flex justify-content-center  vh-100">
 
-    <div class="card p-2 m-3 shadow mb-5 rounded" id="details">
+    <div class="card" id="details">
+        <div class="row g-0">
+            <div class="col-md-4">
         <img
             src="{{$products->image}}"
-            class="card-img-top shadow p-2 mb-3 rounded"
+            class="img-fluid rounded-start p-0 m-3"
             alt="image_of_products"
-            style="height: 15vw; object-fit: cover"
+            style="object-fit: cover;"
         />
-        <div class="card-body">
+    </div>
+    <div class="col-md-8">
+        <div class="card-body m-3 mt-0">
             <h5 class="bg-light card-title text-center mb-3">
                 <span class="text-uppercase fw-lighter text-center"
                     >{{$products->name}}</span
@@ -100,7 +104,5 @@
         </div>
     </div>
 </div>
-    
-    
-    
-    @endsection
+</div>
+@endsection

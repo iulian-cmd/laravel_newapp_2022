@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\Cart;
+use App\Models\Product;
+use Session;
 
 class CartController extends Controller
 {
@@ -18,11 +19,14 @@ class CartController extends Controller
 
     public function addToCart(Request $request)
     {
-        Cart::addToCart([
+        Cart::add([
             'id' => $request->id,
             'name' => $request->name,
             'price' => $request->price,
             'quantity' => $request->quantity,
+            'attributes' => array(
+                'image' => $request->image,
+            )
         ]);
         session()->flash('success', 'Product is Added to Cart Successfully !');
 
@@ -62,9 +66,4 @@ class CartController extends Controller
 
         return redirect()->route('cart.list');
     }
-
-    
 }
-    // $reflector = new CartController;
-    // $fn = $reflector->getContent();
-    // dd($fn);

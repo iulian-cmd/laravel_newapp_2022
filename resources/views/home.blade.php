@@ -6,7 +6,7 @@
 
 
 
-@section('content')
+@section('home')
 <div class="welcome-txt">
     <h3>Welcome to Adventure Alps</h3>
 <p class="large">Sport and travel packs in Auvergne-Rhône-Alpes</p>     
