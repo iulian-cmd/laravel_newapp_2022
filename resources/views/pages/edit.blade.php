@@ -44,8 +44,8 @@
         </div>
 
           <div class="form-group">
-              <label for="prix">Prix :</label>
-              <input type="text" class="form-control" name="prix" value="{{ $products->price }}"/>
+              <label for="price">Prix :</label>
+              <input type="text" class="form-control" name="price" value="{{ $products->price }}"/>
           </div>
 
           <div class="form-group">
