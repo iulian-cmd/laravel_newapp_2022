@@ -1,7 +1,7 @@
 html,
 body {
     height: 100%;
-    background-image: url("{{asset('../../../../public/assets/imgs/background_beige.jpg");
+    background-image: url("{{asset('../../../../assets/imgs/background_beige.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -48,7 +48,7 @@ h3.welcome-txt {
     padding: 0;
     height: 100%;
 
-    background-image: url("{{asset('../../../../public/assets/imgs/background.jpg");
+    background-image: url("{{asset('../../../../assets/imgs/background.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
