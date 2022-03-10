@@ -11,7 +11,7 @@
         </div>
         @endif
         </p>
-        <h3 class="fs-3 text-center text-uppercase">Cart List</h3>
+        <h3 class="fs-3 text-center text-uppercase mb-3">Cart List</h3>
         <div class="row">
             <div class="col-lg-9">
                 <!-- CART PRODUCTS TABLE-->
@@ -40,12 +40,12 @@
                                 </td>
                                 <td>
                                     <form action="{{ route('cart.update') }}" method="POST"
-                                        class="d-flex justify-content-between flex-row">
+                                        class="d-flex justify-content-evenly flex-row">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $item->id}}">
                                         <input type="number" name="quantity" value="{{ $item->quantity }}"
                                             class="text-center form-control form-control-sm" style="width: 4rem;" />
-                                        <h3><button type="submit" class="mx-1 px-2 py-2 btn btn-success"><svg
+                                        <h3><button class="px-2 py-2 btn btn-success"><svg
                                                     xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     fill="currentColor" class="bi bi-arrow-clockwise"
                                                     viewBox="0 0 16 16">
