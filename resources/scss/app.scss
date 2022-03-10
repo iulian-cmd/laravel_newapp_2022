@@ -1,46 +1,45 @@
 @import "bootstrap";
-@import "./_variables.scss";
-@import "./_bootswatch.scss";
 
-// Custom.scss
-// Option A: Include all of Bootstrap
-
-// Include any default variable overrides here (though functions won't be available)
-
-// @import "/node_modules/bootstrap/scss/bootstrap";
-
-// Then add additional custom code here
-
-$bg-light: #46a2ff;
 
 #catalogue{ 
   font-family: 'Asset', cursive !important;
-  font-size: 2.5em;
+  font-size: 3rem;
   color: #e01405;
   text-align: center;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
-.welcome-txt .h3 {
-  text-align: left;
+.welcome-txt{
+  text-align: center;
   width: 960px;
+  background-color: rgb(238, 231, 231);
+  opacity: 0.8;
+  margin-bottom: 150px;
+  margin-top: 150px;
+  padding-bottom: 150px;
+  padding-top: 150px;
+  color: #00109e;
+  
+}
+h3.welcome-txt{
+  text-align: center;
   margin: 0 auto;
   padding: 0;
-  font-size: 1.5em;
-  font-family: 'Asset', cursive !important;
-  color: #e01405;
+  font-size: 1.5em;  font-family: 'Asset', cursive !important;
+  color: #00109e;
   
 }
 
 .welcome-txt p.large {
   margin-top: 12px;
   margin-bottom: 8px;
+  font-size: 1em;
+  font-family: 'Asset', cursive !important;
+  color: #e01405;
+  padding-bottom: 20px;
 }
 
-p.large {
-  font-size: 24px;
-}
 
 #cart_title {
   font-family: 'Asset', cursive !important;
@@ -64,8 +63,4 @@ body{
   background-size: cover;
 }
 
-.wrapper{
-  height:100%;
-  
-}
 
