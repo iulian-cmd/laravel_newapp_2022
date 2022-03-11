@@ -43,7 +43,12 @@ class BackOffController extends Controller
             'description' => 'required', 'max:255',
             'price' =>'required|integer',
             'category_id' => 'required',
+<<<<<<< HEAD
 
+=======
+            'distance' => 'required',
+            'group_size' => 'required',
+>>>>>>> d48c39b (before api)
         ]);
 
        Product::create($validatedData);
@@ -90,6 +95,8 @@ class BackOffController extends Controller
             'description' => 'required|max:255',
             'price' =>'required|integer',
             'category_id' => 'required',
+            'distance' => 'required',
+            'group_size' => 'required',
         ]);
         //dd(Product::findOrFail($id));
         Product::findOrFail($id)->update($validatedData);

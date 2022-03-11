@@ -17,7 +17,7 @@
         @endif
 
         <div class="w-screen">
-            <div class="border-collapse border border-slate-500 shadow">
+            <div class="border-collapse border border-slate-500 shadow  display: inline">
                 <table class="divide-gray-300 table-auto">
                     <thead class="bg-gray-50 w-40">
                         <tr>
