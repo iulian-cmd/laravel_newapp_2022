@@ -1,5 +1,7 @@
 <?php
-namespace App\Http\CartControllers;
+
+
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
@@ -18,9 +20,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [HomeController::class, 'showHome']);
-Route::get('home', [HomeController::class, 'showHome']);
-Route::get('product', [ProductController::class, 'showList']);
-Route::get('product/{id}',[ProductController::class, 'showProduct']);
+Route::get('home', [HomeController::class, 'showHome'])->name('home');
+Route::get('product', [ProductController::class, 'showList'])->name('product.list');
+Route::get('product/{id}',[ProductController::class, 'showProduct'])->name('product.detail/{id}');
+Route::get('contact', [ContactController::class, 'showContact'])->name('contact');
 
 //Cart
 Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
@@ -31,7 +34,6 @@ Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear'
 
 //backoffice
 Route::group(['middleware' => ['auth']], function () {
-
     Route::resource('backoffice', BackOffController::class);
     //Route::get('backhome', [BackOffController::class, 'home']);
 
@@ -40,6 +42,7 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
 
 require __DIR__.'/auth.php';
 

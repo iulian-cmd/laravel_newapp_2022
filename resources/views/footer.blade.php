@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="jumbotron page-footer font-small bg-light" style="width:100% !important;">
+<footer class="jumbotron page-footer bg-dark font-small opacity-75 text-light" style="width:100% !important;">
     <!-- Footer Links -->
     <div class="container text-center text-md-left">
 
@@ -23,11 +23,11 @@
                 <h6 class="text-uppercase mb-4 font-weight-bold ">Nos produits</h6>
                 <p>
                     <a href="product"
-                        class="btn btn-outline-secondary btn-sm">Packs</a>
+                        class="btn btn-outline-light btn-sm">Packs</a>
                       
                 </p>
                 <p>
-                    <a href="#" class="btn btn-outline-secondary btn-sm">Accessories</a> (à venir)
+                    <a href="#" class="btn btn-outline-light btn-sm">Accessories</a> (à venir)
                 </p>
 
             </div>
@@ -37,9 +37,9 @@
 
             <!-- Grid column -->
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-weight-bold ">Horaires</h6>
+                <h6 class="text-uppercase mb-4 font-weight-bold">Horaires</h6>
 
-                <table class="d-flex justify-content-center">
+                <table class="d-flex justify-content-center text-light">
                     <tbody>
                         <tr>
                             <th>Lundi</th>
@@ -79,7 +79,7 @@
             <!-- Grid column -->
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                 <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-                <table class="d-flex justify-content-center">
+                <table class="d-flex justify-content-center text-light">
                     <tr class="d-flex justify-content-start">
                         <th>
                             <i class="bi bi-house-door"></i>
@@ -147,7 +147,7 @@
 
         <!-- Grid row -->
         <div class="row d-flex align-items-center">
-            <p class="text-center text-md-center">© 2021 Copyright:
+            <p class="text-center text-md-center">© 2022 Copyright:
                 <strong> hendrik and iulian </strong>
             </p>
             <!-- Grid column -->

@@ -2,20 +2,40 @@
     @include('head')
 </head>
 
-<header class="container">
+
+<header class="container-fluid">
     @include('navbar')
 </header>
 
-<div id="catalogue" class="container bg-light text-center">
+
+<div id="catalogue" class="container text-center">
     @yield('title')
 </div>
 
-<div class="container bg-light">
+<div class="product-list">
     <div class="row g-0">
-        @yield('content')
+        @yield('product-list')
     </div>
 </div>
 
-<footer class="row">
+<div class="product-details">
+    <div class="row">
+        @yield('product-details')
+    </div>
+</div>
+
+<div class="home">
+    @yield('home')
+</div>
+
+<div class="cart">
+    @yield('content_cart')
+</div>
+
+<div class="contact_page">
+    @yield('contact_page')
+</div>
+
+<footer>
     @include('footer')
 </footer>

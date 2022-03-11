@@ -1,94 +1,173 @@
 @extends('template')
 
-@section('title')
-    <div id="cart_title">Cart</div>
-@endsection
+@section('content_cart')
+<!-- SHOP BASKET SECTION-->
+<section class="py-5">
+    <div class="container pt-2 pb-4 bg-white opacity-75">
+        <p class="text-muted lead mb-5">
+            @if ($message = Session::get('success'))
+        <div class="p-4 mb-3 fs-5">
+            <p class="text-success">{{ $message }}</p>
+        </div>
+        @endif
+        </p>
+        <h3 class="fs-3 text-center text-uppercase my-3 rounded-top d-flex justify-content-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+            <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+            <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+          </svg><span class="mx-2">Items in your Cart</span> </h3>
+        <div class="row">
+            <div class="col-lg-9">
+                <!-- CART PRODUCTS TABLE-->
+                <div class="table-responsive">
+                    <table class="table table-light table-striped align-items-center text-uppercase text-center">
+                        <thead>
+                            <tr class="text-sm" style='width: 10%;
+                            background: brown !important;
+                            color: brown !important;'>
+                                <th class="border border-light border-top py-3" colspan="2">Product</th>
+                                <th class="border border-light border-top py-3">Quantity</th>
+                                <th class="border border-light border-top py-3">Unit price</th>
+                                <th class="border border-light border-top py-3">Discount</th>
+                                <th class="border border-light border-top py-3">Total</th>
+                                <th class="border border-light border-top py-3">Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($cartItems as $item)
+                            <tr class="text-sm">
+                                <td class="border border-light py-3"><a href="{{url('/product/'.$item->id)}}"><img
+                                            class="img-fluid flex-shrink-0" src="{{ $item->attributes->image }}"
+                                            alt="Thumbnail" style="min-width: 50px; width:100; height:100;"></a></td>
+                                <td class="border border-light py-3 text-start">
+                                    {{ $item->name }}
+                                </td>
+                                <td class="border border-light py-3 px-1" >
+                                    <form action="{{ route('cart.update') }}" method="POST"
+                                        class="d-flex justify-content-evenly flex-row">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{ $item->id}}">
+                                        <input type="number" name="quantity" value="{{ $item->quantity }}"
+                                            class="text-center bg-light form-control form-control-sm" style="width: 4rem;" />
+                                        <h3><button class="px-2 py-2 btn btn-success border-2"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    fill="currentColor" class="bi bi-arrow-clockwise"
+                                                    viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd"
+                                                        d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                                                    <path
+                                                        d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                                                </svg></button></h3>
+                                    </form>
+                                </td>
+                                <td class="border border-light py-3">EUR {{ $item->price }}</td>
+                                <td class="border border-light py-3">EUR 0</td>
+                                <td class="border border-light py-3">EUR {{ $item->price * $item->quantity }}</td>
+                                <td class="border border-light py-3">
+                                    <form action="{{ route('cart.remove') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" value="{{ $item->id }}" name="id">
+                                        <button class="px-2 py-2 btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="20" height="20" fill="currentColor" class="bi bi-trash"
+                                                viewBox="0 0 16 16">
+                                                <path
+                                                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                                <path fill-rule="evenodd"
+                                                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                            </svg></button>
+                                    </form>
 
-@section('content')
-<main class="my-8">
-    <div class="container px-6 mx-auto">
-        <div class="flex justify-center my-6">
-            <div class="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5">
-              @if ($message = Session::get('success'))
-                  <div class="p-4 mb-3 bg-green-400 rounded">
-                      <p class="text-green-800">{{ $message }}</p>
-                  </div>
-              @endif
-                <h3 class="text-3xl text-bold">Cart List</h3>
-              <div class="flex-1">
-                <table class="w-full text-sm lg:text-base" cellspacing="0">
-                  <thead>
-                    <tr class="h-12 uppercase">
-                      <th class="hidden md:table-cell"></th>
-                      <th class="text-left">Name</th>
-                      <th class="pl-5 text-left lg:text-right lg:pl-0">
-                        <span class="lg:hidden" title="Quantity">Qtd</span>
-                        <span class="hidden lg:inline">Quantity</span>
-                      </th>
-                      <th class="hidden text-right md:table-cell"> price</th>
-                      <th class="hidden text-right md:table-cell"> Remove </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                      @foreach ($cartItems as $item)
-                    <tr>
-                      <td class="hidden pb-4 md:table-cell">
-                        <a href="#">
-                          <img src="{{ $item->attributes->image }}" class="w-20 rounded" alt="Thumbnail">
-                        </a>
-                      </td>
-                      <td>
-                        <a href="#">
-                          <p class="mb-2 md:ml-4">{{ $item->name }}</p>
-                          
-                        </a>
-                      </td>
-                      <td class="justify-center mt-6 md:justify-end md:flex">
-                        <div class="h-10 w-28">
-                          <div class="relative flex flex-row w-full h-8">
-                            
-                            <form action="{{ route('cart.update') }}" method="POST">
-                              @csrf
-                              <input type="hidden" name="id" value="{{ $item->id}}" >
-                            <input type="number" name="quantity" value="{{ $item->quantity }}" 
-                            class="w-6 text-center bg-gray-300" />
-                            <button type="submit" class="px-2 pb-2 ml-2 text-white bg-blue-500">update</button>
-                            </form>
-                          </div>
-                        </div>
-                      </td>
-                      <td class="hidden text-right md:table-cell">
-                        <span class="text-sm font-medium lg:text-base">
-                            ${{ $item->price }}
-                        </span>
-                      </td>
-                      <td class="hidden text-right md:table-cell">
-                        <form action="{{ route('cart.remove') }}" method="POST">
-                          @csrf
-                          <input type="hidden" value="{{ $item->id }}" name="id">
-                          <button class="px-4 py-2 text-white bg-red-600">x</button>
-                      </form>
-                        
-                      </td>
-                    </tr>
-                    @endforeach
-                     
-                  </tbody>
-                </table>
-                <div>
-                 Total: ${{ Cart::getTotal() }}
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th class="py-3 border-0 text-end" colspan="5"> <span class="h4 text-dark mb-0 text-capitalize">Subtotal</span>
+                                </th>
+                                <th class="py-3 border-0 text-end" colspan="2"> <span
+                                        class="h4 text-dark mb-0 text-end fw-bold">EUR {{ Cart::getTotal() }}</span></th>
+                            </tr>
+                        </tfoot>
+                    </table>
                 </div>
-                <div>
-                  <form action="{{ route('cart.clear') }}" method="POST">
-                    @csrf
-                    <button class="px-6 py-2 text-red-800 bg-red-300">Remove All Cart</button>
-                  </form>
+                <!-- NAVIGATION FOOTER-->
+                <div class="row gx-lg-0 bg-light px-4 py-3 text-center mb-5">
+                    <div class="col-md-6 text-md-start py-1">
+                        <form action="{{ route('product.list') }}">
+
+                            <button class="btn btn-outline-primary my-1">Continue shopping</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6 text-md-end py-1">
+                        <form action="{{ route('cart.clear') }}" method="POST">
+                            @csrf
+                            <button class="btn btn-outline-danger my-1">Remove All Cart</button>
+                        </form>
+                    </div>
+                    <div>
+                        <form action="{{ route('home') }}">
+                            <button class="btn btn-outline-success my-1" type="submit">Proceed to checkout <i
+                                    class="fas fa-angle-right ms-1"></i></button>
+                        </form>
+                    </div>
                 </div>
-
-
-              </div>
             </div>
-          </div>
-    </div>
-</main>
+            <!-- CHECKOUT SIDEBAR [ORDER SUMMARY]-->
+            <div class="col-lg-3">
+                <div class="mb-5">
+                    <div class="p-4 bg-light">
+                        <h3 class="text-uppercase mb-0">Order summary</h3>
+                    </div>
+                    <div class="py-4 px-3">
+                        <p class="text-muted">Shipping and additional costs are calculated based on the values you have
+                            entered.</p>
+                        <div class="table-responsive bg-light">
+                            <table class="table mb-0">
+                                <tbody class="text-sm">
+                                    <tr>
+                                        <th class="text-muted"> <span class="d-block py-1 fw-normal">Order
+                                                subtotal</span></th>
+                                        <th> <span
+                                                class="d-block py-1 fw-normal text-end">EUR {{ Cart::getTotal() }}</span>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-muted"> <span class="d-block py-1 fw-normal">Insurance for
+                                                cancelling</span></th>
+                                        <th> <span class="d-block py-1 fw-normal text-end">EUR 5</span></th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-muted"> <span class="d-block py-1 fw-normal">Additional not
+                                                hidden tax</span></th>
+                                        <th> <span class="d-block py-1 fw-normal text-end">EUR 5</span></th>
+                                    </tr>
+                                    <tr class="total">
+                                        <td class="py-3 border-bottom-0 text-muted"> <span
+                                                class="lead fw-bold">Total Amount</span>
+                                        </td>
+                                        <th class="pt-3 border-bottom-0"> <span
+                                                class="lead fw-bold text-end">EUR {{ Cart::getTotal() + 10 }}</span>
+                                        </th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="p-2">
+                        <h4 class="text-uppercase mb-0">Coupon code</h4>
+                    </div>
+                    <div class="bg-light py-4 px-3">
+                        <p class="text-muted">If you have a coupon code, please enter it in the box below.</p>
+                        <form action="#">
+                            <div class="input-group">
+                                <input class="form-control" type="text">
+                                <button class="btn btn-primary" type="submit"></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+</section>
 @endsection
