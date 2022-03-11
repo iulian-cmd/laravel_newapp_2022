@@ -18,7 +18,6 @@ body {
 }
 
 @media (min-width: 768px) {
-
     .home h1,
     .home .h1 {
         font-size: 80px !important;
@@ -30,7 +29,7 @@ body {
 .home .h1 {
     font-size: 50px;
     line-height: 1em;
-    font-family: 'bebas_neuebold';
+    font-family: "bebas_neuebold";
     font-weight: 400;
     text-transform: uppercase;
     display: block;
@@ -44,6 +43,25 @@ body {
     text-align: center;
 }
 
-.flush-top {
-    margin-top: 20px !important;
+.banner-form {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 18px 40px;
+    margin-top: 50px;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    background-color: #d18523;
+    position: relative;
+    border: none;
+}
+
+.banner-form a {
+    text-decoration: none;
+}
+
+.banner-form a:after {
+    content: "→";
 }

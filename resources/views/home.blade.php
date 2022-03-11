@@ -12,7 +12,7 @@
         <h1 class="fs-1 flush-top">Welcome to Adventure Alps</h1>
         <p class="fs-4">Sport and travel packs in Auvergne-Rhône-Alpes</p>
         <div class="banner-form">
-            <p class="fs-2"><a href=" {{ url('product') }}">
+            <p class="fs-2"><a class="link-light" href=" {{ url('product') }}">
                     View Catalogue
 
                 </a></p>
