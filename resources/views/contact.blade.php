@@ -6,7 +6,7 @@
 
 
 @section('contact_page')
-<div class="d-flex justify-content-center py-5">
+<div id="contact" class=" d-flex justify-content-center py-5 text-light">
     <div class="container">
 
         <div class="row">
@@ -88,7 +88,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <input type="submit" class="btn btn-outline-secondary btn-sm border"
+                                <input type="submit" class="btn btn-outline-secondary btn-sm border text-light"
                                     value="Send message">
                             </div>
                         </div>

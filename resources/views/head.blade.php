@@ -17,4 +17,8 @@
     <title>App Name - @yield('title')</title>
 </head>
 
-<body id="bod" class="antialiased text-dark bg-light">
+@section('body')
+
+<body id="{{request()->routeIs('home') ? 'body' : 'contact' }}" class="antialiased text-dark bg-light">
+
+    @endsection

@@ -34,7 +34,6 @@ Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear'
 
 //backoffice
 Route::group(['middleware' => ['auth']], function () {
-
     Route::resource('backoffice', BackOffController::class);
     //Route::get('backhome', [BackOffController::class, 'home']);
 
