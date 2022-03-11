@@ -43,6 +43,7 @@ class BackOffController extends Controller
             'description' => 'required', 'max:255',
             'price' =>'required|integer',
             'category_id' => 'required',
+
         ]);
 
        Product::create($validatedData);
