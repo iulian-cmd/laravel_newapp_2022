@@ -119,4 +119,40 @@ Pour créer un model et la migration associée:
 ```
 php artisan make:model Categorie --migration
 ```
+---
+## Create API REST with:
 
+<p align="center"><a href="https://laravel.com/docs/9.x/eloquent-resources" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300"></a></p>
+
+<p align="center"><a href="https://www.postman.com/" target="_blank"><img src="https://seeklogo.com/images/P/postman-logo-5110850F84-seeklogo.com.png" width="235"></a></p>
+
+*click on logo to be redirected Laravel documentation or Postman website*
+
+1. ### Create controller for API
+`php artisan make:controller [TableName]Controller --api --model=[ModelName]`
+
+*This command line created methods (index, store, show, update, destroy) into Controller*
+
+2. ### Create routes into api.php
+```php
+Route::apiResource('[routename]', [TableName]Controller::class);
+```
+*This code created all routes to access methods into Controller*
+
+3. ### Routes verification
+`php artisan route:list`
+
+4. ### Coding the methods of controller
+*Look the code of project in github*
+
+5. ### Postman
+    - for a local server, install Postman for desktop
+    - create new collection
+    - add url route (localhost/...) one to one
+    - specify type of request (get, post, put, patch, delete...)
+    - click on send button to testing API requests
+
+*The Responses of API requests must be to Json Format*
+
+6. ### Securize access to API
+*Coming soon ...*
